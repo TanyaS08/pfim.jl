@@ -17,7 +17,7 @@ function PFIM(
     trait_data::DataFrame,
     feeding_rules::DataFrame;
     y::Float64 = 2.5,
-    downsample::Bool = true,
+    downsample::Union{Bool, Nothing}=nothing,
 )
 
     # data checks
