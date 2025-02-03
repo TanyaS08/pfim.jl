@@ -19,7 +19,7 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
             # keep record if rule is met or not
             tally = 0
 
-            if eltype(trait_data.size) == String31
+            if eltype(trait_data.size) == String
                 for i in Symbol.(traits)
                     consumer_trait = consumer[i]
                     resource_trait = resource[i]
