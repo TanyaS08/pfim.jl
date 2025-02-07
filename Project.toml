@@ -6,3 +6,6 @@ version = "0.1.0"
 [deps]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 SpeciesInteractionNetworks = "49e116ef-912f-4766-9e56-896a49944adc"
+
+[compat]
+DataFrames = "1"
