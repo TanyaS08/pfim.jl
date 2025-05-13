@@ -33,8 +33,8 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                     end
                 end
 
-                # only add link if all 4 rules are met
-                if tally == 4
+                # only add link if all rules (i..e for each trait) are met
+                if tally == length(traits)
                     int_matrix[cons, res] = 1
                 end
             else
@@ -53,7 +53,7 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                     end
 
                     # only add link if all 3 rules are met
-                    if tally == 3
+                    if tally == [length(traits) - 1]
                         int_matrix[cons, res] = 1
                     end
                 end
