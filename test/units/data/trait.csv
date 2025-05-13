@@ -1,0 +1,11 @@
+species,motility,tiering,feeding,size
+polar_bear,motile,semi_aquatic,tertiary,large
+seal,motile,semi_aquatic,secondary,medium
+orca,motile,aquatic,tertiary,large
+cod,motile,aquatic,secondary,medium
+plankton,motile,aquatic,primary,small
+plant_1,sessile,terrestrial,primary,small
+plant_2,sessile,terrestrial,primary,medium
+lynx,motile,terrestrial,tertiary,medium
+rat,motile,terrestrial,secondary,small
+deer,motile,terrestrial,secondary,medium

@@ -2,6 +2,7 @@ global anyerrors = false
 
 tests = [
     "mock test" => "00_allgood.jl",
+    "metaweb test" => "01_metaweb.jl",
 ]
 
 for test in tests
