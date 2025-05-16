@@ -17,10 +17,12 @@ function PFIM(
     trait_data::DataFrame,
     feeding_rules::DataFrame;
     y::Float64 = 2.5,
-    downsample::Union{Bool, Nothing}=nothing,
+    downsample::Union{Bool,Nothing} = nothing,
 )
 
     # data checks
+    # TODO this should rather subset traits with those that are in the feeding rules table
+    # as this will make it more generalisable
     for (i, v) in enumerate(["species", "motility", "tiering", "feeding", "size"])
         if v ∉ names(trait_data)
             error("Missing $(v) variable as a column in DataFrame, add or rename")

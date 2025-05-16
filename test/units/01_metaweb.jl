@@ -23,6 +23,6 @@ known_list = DataFrame(CSV.File("units/data/interactions.csv"))
 known_int = tuple.(Symbol.(known_list.consumer), Symbol.(known_list.resource), true)
 
 # test if interaction pairs match up
-@test sort(pfim_int) ==  sort(known_int)
+@test sort(pfim_int) == sort(known_int)
 
 end

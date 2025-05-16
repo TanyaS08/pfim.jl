@@ -23,11 +23,13 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                 for i in Symbol.(traits)
                     consumer_trait = consumer[i]
                     resource_trait = resource[i]
+                    # get the resources (diet) for consumer trait
                     resources =
                         filter(
                             :trait_consumer => x -> x == consumer_trait,
                             feeding_rules,
                         ).trait_resource
+                    # assess if resource trait is in the diet
                     if resource_trait ∈ resources
                         tally = tally + 1
                     end
