@@ -31,7 +31,7 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                         ).trait_resource
                     # assess if resource trait is in the diet
                     if resource_trait ∈ resources
-                        tally = tally + 1
+                        tally += 1
                     end
                 end
 
@@ -50,7 +50,7 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                                 feeding_rules,
                             ).trait_resource
                         if resource_trait ∈ resources
-                            tally = tally + 1
+                            tally += 1
                         end
                     end
 
