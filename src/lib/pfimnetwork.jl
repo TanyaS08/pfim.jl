@@ -41,6 +41,7 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                 end
             else
                 if consumer.size >= resource.size
+                    # this is going to need to be changed to be more generalisable -> filter size from trait list
                     for i in Symbol.(traits[1:3])
                         consumer_trait = consumer[i]
                         resource_trait = resource[i]
