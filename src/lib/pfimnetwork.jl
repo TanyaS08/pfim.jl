@@ -37,7 +37,7 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
 
                 # only add link if all rules (i..e for each trait) are met
                 if tally == 4
-                    int_matrix[cons, res] = 1
+                    int_matrix[res, cons] = 1
                 end
             else
                 if consumer.size >= resource.size
