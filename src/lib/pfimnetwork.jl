@@ -19,7 +19,6 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
             # keep record if rule is met or not
             tally = 0
 
-            if eltype(trait_data.size) == String
                 for i in Symbol.(traits)
                     consumer_trait = consumer[i]
                     resource_trait = resource[i]
@@ -39,28 +38,6 @@ function _PFIM_network(trait_data::DataFrame, feeding_rules::DataFrame)
                 if tally == 4
                     int_matrix[res, cons] = 1
                 end
-            else
-                if consumer.size >= resource.size
-                    # this is going to need to be changed to be more generalisable -> filter size from trait list
-                    for i in Symbol.(traits[1:3])
-                        consumer_trait = consumer[i]
-                        resource_trait = resource[i]
-                        resources =
-                            filter(
-                                :trait_consumer => x -> x == consumer_trait,
-                                feeding_rules,
-                            ).trait_resource
-                        if resource_trait ∈ resources
-                            tally += 1
-                        end
-                    end
-
-                    # only add link if all 3 rules are met
-                    if tally == 3
-                        int_matrix[res, cons] = 1
-                    end
-                end
-            end
 
 
 
