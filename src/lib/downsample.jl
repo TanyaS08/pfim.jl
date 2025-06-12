@@ -28,7 +28,7 @@ function _downsample(network, matrix, y)
     prob_matrix = zeros(AbstractFloat, (S, S))
     for i in axes(matrix, 1)
         for j in axes(matrix, 2)
-            if matrix[i, j] == true
+            if matrix[i, j] == 1
                 prob_matrix[i, j] = link_dist[i]
             end
         end
